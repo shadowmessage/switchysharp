@@ -202,6 +202,8 @@ function setIconInfo(profile, preventProxyChanges) {
 
     if (RuleManager.isAutomaticModeEnabled(profile)) {
         setAutoSwitchIcon();
+        var iconPath = iconDir + "icon-" + (profile.color || "blue") + ".png";
+        if (!extDisabled) chrome.browserAction.setIcon({ path:iconPath });
         return;
     }
 
